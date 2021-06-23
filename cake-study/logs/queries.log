@@ -1,0 +1,51 @@
+2021-06-23 04:37:39 Debug: duration=0 rows=4 SHOW TABLES FROM `cake`
+2021-06-23 04:37:39 Debug: duration=1 rows=8 SHOW FULL COLUMNS FROM `articles`
+2021-06-23 04:37:39 Debug: duration=0 rows=3 SHOW INDEXES FROM `articles`
+2021-06-23 04:37:39 Debug: duration=1 rows=1 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cake' AND kcu.TABLE_NAME = 'articles' AND rc.TABLE_NAME = 'articles'
+2021-06-23 04:37:39 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'articles'
+2021-06-23 04:37:39 Debug: duration=1 rows=2 SHOW FULL COLUMNS FROM `articles_tags`
+2021-06-23 04:37:39 Debug: duration=0 rows=3 SHOW INDEXES FROM `articles_tags`
+2021-06-23 04:37:39 Debug: duration=1 rows=2 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cake' AND kcu.TABLE_NAME = 'articles_tags' AND rc.TABLE_NAME = 'articles_tags'
+2021-06-23 04:37:39 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'articles_tags'
+2021-06-23 04:37:39 Debug: duration=1 rows=4 SHOW FULL COLUMNS FROM `tags`
+2021-06-23 04:37:39 Debug: duration=0 rows=2 SHOW INDEXES FROM `tags`
+2021-06-23 04:37:39 Debug: duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cake' AND kcu.TABLE_NAME = 'tags' AND rc.TABLE_NAME = 'tags'
+2021-06-23 04:37:39 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'tags'
+2021-06-23 04:37:39 Debug: duration=0 rows=5 SHOW FULL COLUMNS FROM `users`
+2021-06-23 04:37:39 Debug: duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-06-23 04:37:39 Debug: duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cake' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+2021-06-23 04:37:39 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-06-23 04:37:39 Debug: duration=1 rows=8 SHOW FULL COLUMNS FROM `articles`
+2021-06-23 04:37:39 Debug: duration=0 rows=3 SHOW INDEXES FROM `articles`
+2021-06-23 04:37:39 Debug: duration=1 rows=1 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cake' AND kcu.TABLE_NAME = 'articles' AND rc.TABLE_NAME = 'articles'
+2021-06-23 04:37:39 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'articles'

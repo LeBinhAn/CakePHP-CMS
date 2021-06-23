@@ -1,0 +1,60 @@
+version: '3.8'
+services:
+
+  #PHP Service
+  cake-php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cake-app
+    container_name: cake-app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www/html
+    volumes: 
+      - ./cake-study:/var/www/html
+      - ./.docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - cake-network
+
+  #Nginx Service
+  cake-nginx:
+    image: nginx:alpine
+    container_name: cake-webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8765:80"
+      - "4435:443"
+    volumes: 
+      - ./cake-study:/var/www/html
+      - ./.docker/server/conf.d:/etc/nginx/conf.d
+    networks:
+      - cake-network
+
+  #MySQL Service
+  cake-mysql:
+    image: mysql:5.7.22
+    container_name: cake-db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_DATABASE: cake
+      MYSQL_ROOT_PASSWORD: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes: 
+      - ./.docker/databases/my.cnf:/etc/mysql/my.cnf
+      - ./.docker/databases/data:/var/lib/mysql
+    networks:
+      - cake-network
+
+#Docker Networks
+networks:
+  cake-network:
+    driver: bridge
